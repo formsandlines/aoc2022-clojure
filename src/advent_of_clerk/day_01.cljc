@@ -35,10 +35,12 @@
   [groups]
   (map (partial apply +) groups))
 
+
+;; Part 1
+
 (def groups (parse-groups ex-input))
 (def sums (sum-groups groups))
 (apply max sums)
-
 
 (defn solve-1
   [input]
@@ -46,14 +48,20 @@
                   parse-groups
                   sum-groups)))
 
+
+;; Part 2
+
+(take 3 (sort (comparator >) sums))
+
 (defn solve-2
   [input]
-  nil)
+  (apply + (->> input
+                parse-groups
+                sum-groups
+                (sort (comparator >))
+                (take 3))))
 
 
 (comment
-
-
-
 
   )

@@ -11,7 +11,7 @@
 
 (deftest solve-2-test
   (testing "Part 2 example correct"
-    (is (= (solve-2 ex-input) true)))
+    (is (= (solve-2 ex-input) 45000)))
   (testing "Part 2 correct"
-    (is (= (solve-2 input) true))))
+    (is (= (solve-2 input) 212836))))
 
