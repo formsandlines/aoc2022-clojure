@@ -44,9 +44,10 @@
 
 (defn solve-1
   [input]
-  (apply max (->> input
-                  parse-groups
-                  sum-groups)))
+  (->> input
+       parse-groups
+       sum-groups
+       (apply max)))
 
 
 ;; Part 2
@@ -55,11 +56,12 @@
 
 (defn solve-2
   [input]
-  (apply + (->> input
-                parse-groups
-                sum-groups
-                (sort (comparator >))
-                (take 3))))
+  (->> input
+       parse-groups
+       sum-groups
+       (sort (comparator >))
+       (take 3)
+       (apply +)))
 
 
 (comment
