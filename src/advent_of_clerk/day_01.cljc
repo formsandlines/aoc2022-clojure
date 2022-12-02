@@ -35,12 +35,17 @@
   [groups]
   (map (partial apply +) groups))
 
-
-;; Part 1
+;; ---
+;; ## Part 1
 
 (def groups (parse-groups ex-input))
 (def sums (sum-groups groups))
 (apply max sums)
+
+;; TIL:
+;; - alternative: `(take-nth 2 …)` instead of `(remove …)`
+;; - `(str/split … #"\n\n")` would have avoided partitioning
+;; - `str/blank?` checks for empty strings
 
 (defn solve-1
   [input]
@@ -49,10 +54,14 @@
        sum-groups
        (apply max)))
 
-
-;; Part 2
+;; ---
+;; ## Part 2
 
 (take 3 (sort (comparator >) sums))
+
+;; TIL:
+;; - `(sort > …)` works without comparator
+;; - weirdly, `(sort-by - …)` is also fine
 
 (defn solve-2
   [input]
