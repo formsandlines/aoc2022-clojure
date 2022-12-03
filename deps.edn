@@ -1,5 +1,7 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/core.logic {:mvn/version "1.0.1"}
+        org.clojure/core.match {:mvn/version "1.0.0"}
         io.github.nextjournal/clerk {:git/sha "bdf79084374fc89cd956ec076847c0845c80c911"}
         org.babashka/cli {:mvn/version "0.5.40"}
         ;; silence log warnings
