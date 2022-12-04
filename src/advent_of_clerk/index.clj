@@ -17,7 +17,7 @@
   []
   (into []
         (keep (fn [day]
-                (let [f (fs/file "src" "advent_of_clerk" (format "day_%s.clj" (cond->> day (<= day 10) (str "0"))))]
+                (let [f (fs/file "src" "advent_of_clerk" (format "day_%s.cljc" (cond->> day (<= day 10) (str "0"))))]
                   (when (and (.exists f)
                              (< 3 (count (str/split-lines (slurp f)))))
                     (str f)))))
@@ -30,6 +30,6 @@
 
 ^::clerk/no-cache
 (clerk/html (into [:ul] (mapv (fn [path]
-                                (when-let [day (second (re-matches #".*day_(\d+).clj" path))]
+                                (when-let [day (second (re-matches #".*day_(\d+).cljc" path))]
                                   [:li [:a {:href (clerk/doc-url path)} "Day " day]])) (build-paths))))
 

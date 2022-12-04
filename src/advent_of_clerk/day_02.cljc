@@ -57,6 +57,7 @@
 
 ;; TIL:
 ;; - `(into {} …)` doesn’t take lists like `'((1 2) (2 3))`
+;; - since the input only has single characters, could have used destructuring on strings to parse the input
 
 
 ;; ---
@@ -91,6 +92,11 @@
 ;; ### Observations
 ;; - now the symbols in the 2. column map to win/draw/lose scores
 ;; - this is just a different equation in the _player-opponent-outcome_ relation, so maybe logic programming would be a natural fit for this puzzle?
+
+;; TIL:
+;; - relations could also be hard-coded as data using triples: [player opponent outcome]
+;; - you can hide Clerk results using `^{::clerk/visibility {:result :hide}}`
+;; - of course, an explicit lookup-table could do the job much more efficiently, but it isn’t really fun, so I try to avoid it
 
 
 (comment
