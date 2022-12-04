@@ -1,7 +1,7 @@
 ;; # 🎄 Advent of Clerk: Day 3
 (ns advent-of-clerk.day-03
   (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
-            [advent-of-clerk.utils :as utils]
+            [advent-of-clerk.utils :as utils :refer [not-bb]]
             [clojure.set :as cset]
             [clojure.string :as cstr]))
 
@@ -52,12 +52,14 @@
 
 ;; ### Studies
 
-(clerk/table
- (clerk/use-headers (apply vector
-                           ["Char" "Unicode" "Char→Priority" "Priority→Char"]
-                           (mapv (fn [c] [c (int c) (type->prio c)
-                                          (prio->type (type->prio c))])
-                                 "azAZ"))))
+(not-bb
+ (clerk/table
+  (clerk/use-headers
+   (apply vector
+          ["Char" "Unicode" "Char→Priority" "Priority→Char"]
+          (mapv (fn [c] [c (int c) (type->prio c)
+                         (prio->type (type->prio c))])
+                "azAZ")))))
 
 (def rucksacks (parse-input-1 ex-input))
 
