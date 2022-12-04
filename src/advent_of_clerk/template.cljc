@@ -2,10 +2,11 @@
 (ns advent-of-clerk.template
   (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
             [advent-of-clerk.utils :as utils]
-            [clojure.string :as str]))
+            [clojure.set :as cset]
+            [clojure.string :as cstr]))
 
 (def input (->> (utils/load-input "day_XX.txt")
-                (str/split-lines)))
+                (cstr/split-lines)))
 
 (def ex-input
   nil)

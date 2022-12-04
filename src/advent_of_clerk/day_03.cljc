@@ -3,10 +3,10 @@
   (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
             [advent-of-clerk.utils :as utils]
             [clojure.set :as cset]
-            [clojure.string :as str]))
+            [clojure.string :as cstr]))
 
 (def input (->> (utils/load-input "day_03.txt")
-                (str/split-lines)))
+                (cstr/split-lines)))
 
 (def ex-input
   ["vJrwpWtwJgWrhcsFMMfFFhFp"
@@ -68,6 +68,7 @@
 ;; ### Observations
 ;; - order within compartments doesn’t matter
 ;; - the category symbols are irrelevant, only their priorities matter
+;; - simpler type->prio seen on Clojurian slack: `(-> (int c) (- 96) (mod 58))`
 
 ;; ---
 ;; ## Part 2
