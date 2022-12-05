@@ -88,8 +88,25 @@
 ;; ### Observations
 ;; - when multiple crates are moved, their order will be reversed in the stack
 ;; - in the input, all crates are the same amount of chars apart
-;; - `peek` and `pop` behave differently on vectors vs lists and throw on some special sequences… I replaced them with `first` and `rest` instead, but still have to learn how and why they would be used in Clojure
 ;; - I feel like parsing the input was the hardest part of the puzzle
+
+;; TIL:
+;; - `peek` and `pop` behave differently on vectors vs lists and throw on some special sequences… I replaced them with `first` and `rest` instead, but still have to learn how and why they would be used in Clojure
+;; - could have used `(s/split #"\n\n")` instead of partition to split the input
+;; - you can use pipes in regex-pattern for `re-seq` to split a sequence into alternative parts
+;; - you can “transpose” across a seq of seqs by applying `map` to all of them, which would have helped with the initial stack input (a string is also a seq)
+
+;; I really like this transpose-based parsing approach (adapted from [@motform](https://github.com/motform/advent-of-clojure/blob/master/src/advent_of_clojure/2022/05.clj)):
+(let [[init _] (cstr/split (utils/load-input "day_05.txt") #"\n\n")
+      transpose (fn [matrix] (apply map vector matrix))
+      ->stack   (fn [xs] {(-> xs last str parse-long) (drop-last xs)})]
+  (->> init
+       cstr/split-lines
+       (apply map vector)
+       (map (partial remove #(#{\space \[ \]} %)))
+       (remove empty?)
+       (map ->stack)
+       (apply merge)))
 
 ;; ---
 ;; ## Part 2
