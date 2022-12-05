@@ -24,15 +24,14 @@
 ;; ## Part 1
 
 (defn parse-stacks [input]
-  (let [uppercase (set (map char
-                            (range (int \A) (inc (int \Z)))))]
+  (let [uppercase   (set (map char (range (int \A) (inc (int \Z)))))
+        parse-crate (fn [i xs]
+                      (let [crate-id (filter uppercase xs)]
+                        (when-not (empty? crate-id)
+                          [(inc i) crate-id])))]
     (->> input
          (map (comp (partial into {})
-                    (partial map-indexed
-                             (fn [i xs]
-                               (let [ids (filter uppercase xs)]
-                                 (when-not (empty? ids)
-                                   [(inc i) ids]))))
+                    (partial map-indexed parse-crate)
                     (partial partition-all 4)))
          (apply merge-with concat))))
 
