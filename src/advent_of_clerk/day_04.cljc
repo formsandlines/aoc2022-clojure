@@ -89,8 +89,7 @@
                    (* (dec amount) margin))]
     [:svg {:width "100%"
            :view-box (str "0 0 " (inc x-max) " " chart-h)
-           :style {:margin "2rem 0"}
-           }
+           :style {:margin "2rem 0"}}
      (into [:g]
            (map-indexed
             (fn [y [[a1 a2] [b1 b2] :as group]]
