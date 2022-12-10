@@ -23,14 +23,14 @@
             (keep (fn [day]
                     (let [f (fs/file
                              root subdir
-                             (format "day_%s.cljc"
+                             (format "day_%s.clj"
                                      (cond->> day (<= day 10) (str "0"))))]
                       (when (and (.exists f)
                                  (< 3 (count (str/split-lines (slurp f)))))
                         (str f)))))
             (range 25))
       ;; additional notebooks
-      [(str (fs/file root subdir "day_02_logic.cljc"))]))))
+      [(str (fs/file root subdir "day_02_logic.clj"))]))))
 
 #_(build-paths)
 
@@ -40,8 +40,8 @@
 (clerk/html
  (into [:ul]
        (mapv (fn [path]
-               (let [day      (second (re-matches #".*day_(\d+).*.cljc?" path))
-                     appendix (second (re-matches #".*day_\d+_(.*).cljc?" path))]
+               (let [day      (second (re-matches #".*day_(\d+).*.clj?" path))
+                     appendix (second (re-matches #".*day_\d+_(.*).clj?" path))]
                  (when (some? day)
                    [:li [:a {:href (clerk/doc-url path)}
                          "Day " day

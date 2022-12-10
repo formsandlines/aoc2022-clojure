@@ -1,6 +1,6 @@
 ;; # 🎄 Advent of Clerk: Day X
 (ns advent-of-clerk.template
-  (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
+  (:require [nextjournal.clerk :as clerk]
             [advent-of-clerk.utils :as utils]
             [clojure.set :as cset]
             [clojure.string :as cstr]))

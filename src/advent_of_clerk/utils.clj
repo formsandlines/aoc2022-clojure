@@ -3,7 +3,7 @@
             [clojure.string :as str]))
 
 (defn load-input [filename]
-  #?(:clj (slurp (io/resource filename))))
+  (slurp (io/resource filename)))
 
 ;; Helper for conditional babashka code without using reader conditionals
 ;; by @borkdude: https://twitter.com/borkdude/status/1599067149187764224

@@ -1,6 +1,6 @@
 ;; # 🎄 Advent of Clerk: Day 2
 (ns advent-of-clerk.day-02-logic
-  (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
+  (:require [nextjournal.clerk :as clerk]
             [advent-of-clerk.utils :as utils]
             [clojure.test :as t :refer [deftest is testing]]
             [clojure.core.logic :as l :refer [run* defne]]
