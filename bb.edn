@@ -1,4 +1,5 @@
 {:paths ["src" "resources"]
+ :deps {io.github.nextjournal/clerk {:git/sha "10e95c4c498c0f55bb5277d60796da4745811ee4"}}
  :tasks
  {test:bb {:doc "Run bb tests"
            :extra-paths ["test"]

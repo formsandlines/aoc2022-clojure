@@ -1,7 +1,7 @@
 ;; # 🎄 Advent of Clerk: Day 4
 (ns advent-of-clerk.day-04
-  (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
-            [advent-of-clerk.utils :as utils :refer [not-bb]]
+  (:require [nextjournal.clerk :as clerk]
+            [advent-of-clerk.utils :as utils]
             [clojure.set :as cset]
             [clojure.string :as cstr]))
 
@@ -112,11 +112,9 @@
                          (concat [bg] group))))))
             groups))]))
 
-(not-bb
- (clerk/html (make-chart interval-groups)))
+(clerk/html (make-chart interval-groups))
 
-(not-bb
- (clerk/html (make-chart (parse input))))
+(clerk/html (make-chart (parse input)))
 
 ;; ### Observations
 ;; - the number of overlapping sections doesn’t matter

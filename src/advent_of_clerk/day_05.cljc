@@ -1,6 +1,6 @@
 ;; # 🎄 Advent of Clerk: Day 5
 (ns advent-of-clerk.day-05
-  (:require #?@(:bb [] :clj [[nextjournal.clerk :as clerk]])
+  (:require [nextjournal.clerk :as clerk]
             [advent-of-clerk.utils :as utils]
             [clojure.string :as cstr]))
 
@@ -130,7 +130,6 @@
 ;; ### Observations
 ;; - no reverse ordering of moved stacks here
 ;; - of course, the first part could have been solved similarly without the `reduce` for iteration, but I like how it displays the slower one-by-one stack operation of the _CrateMover9000_ vs the fast all-at-once chunk moving of the _CrateMover9001_ :)
-
 
 (comment
 
