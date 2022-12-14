@@ -156,6 +156,10 @@
 ;; ### Observations
 ;; - in the end, the tree-walk is still necessary and it might have been more efficient to compute the sizes while parsing without having to build the absolute paths, but I wanted a flexible approach that is easier to reason about
 
+;; TIL:
+;; - you don’t even need to consider subdirectories if you just update all sizes of directories below the current dir for each file size
+;; (-> see @Apple’s solution in Clojurian Slack `#adventofcode`, which also features a very nice regex to split the data)
+
 ;; ---
 ;; ## Part 2
 
