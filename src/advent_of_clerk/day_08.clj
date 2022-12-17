@@ -125,6 +125,15 @@
 ;; - trees on the edges will always have a scenic score of 0, so they can be ignored
 ;; - seems like we cannot make use of the results of part 1
 
+;; TIL:
+;; - `for` might be more convenient to transform n-dimensional seqs than `map`
+;; - transforming a 2D seq into a map of coordinates helps to quickly traverse a grid in all directions by simple coordinate manipulation and lookup in the map (see https://gitlab.com/maximoburrito/advent2022/-/blob/main/src/day08/main.clj for example)
+
+;; exmaple:
+(for [[i xs] (map-indexed vector (repeat 3 ['a 'b 'c]))
+      [j x]  (map-indexed vector xs)]
+  [[i j] x])
+
 
 (comment
 
