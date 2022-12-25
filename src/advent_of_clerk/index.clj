@@ -24,7 +24,7 @@
                     (let [f (fs/file
                              root subdir
                              (format "day_%s.clj"
-                                     (cond->> day (<= day 10) (str "0"))))]
+                                     (cond->> day (< day 10) (str "0"))))]
                       (when (and (.exists f)
                                  (< 3 (count (str/split-lines (slurp f)))))
                         (str f)))))
