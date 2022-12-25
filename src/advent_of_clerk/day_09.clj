@@ -123,6 +123,12 @@
 
 (count (distinct (map (comp first :tail) results1)))
 
+;; TIL:
+;; - `reductions` can help a lot and I should think about it more often
+;; - use `(mapv + v1 v2)` to quickly add two vectors of the same dimension
+;; - `Long/signum` exists (Java only)
+;; - should use defaults with (implicit) `get` on maps/sets more often
+
 
 ;; ---
 ;; ## Part 2
