@@ -2,7 +2,7 @@
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/core.logic {:mvn/version "1.0.1"}
         org.clojure/core.match {:mvn/version "1.0.0"}
-        io.github.nextjournal/clerk {:git/sha "75f073c4899e37b2259cb2057cbf863b90892897"}
+        io.github.nextjournal/clerk {:git/sha "cc28e1e3a1381b7c2bc1e18d89d7b8970079fd16"}
         org.babashka/cli {:mvn/version "0.5.40"}
         ;; silence log warnings
         org.slf4j/slf4j-nop {:mvn/version "1.7.36"}}

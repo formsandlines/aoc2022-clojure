@@ -19,3 +19,5 @@ yarn.lock
 /public/build
 .nrepl-port
 .clj-kondo/marick
+/input/
+/resources/

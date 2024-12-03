@@ -295,7 +295,17 @@
 ;; ### Observations
 ;; - for `addx`, sprite position is only changed after both pixels have been drawn, so we only need to consider the previous position
 
+;; TIL:
+;; - inclusive intervals can be easily represented with (<= lower x upper)
+
 (comment
+
+  (cstr/replace (utils/load-input "day_10.txt") #"(noop|addx)" "0")
+
+  (cstr/replace "addx 9\n noop addx 2" #"(noop|addx)" "0")
+
+  (map dec (read-string "[1 2 3]"))
+
 
   )
 
